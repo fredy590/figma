@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Toucan Amazon Tours - Paquetes turísticos en la Amazonia Peruana. Vive una experiencia única en la selva.">
+    <meta name="keywords" content="turismo, amazonia, peru, paquetes, tours, aventura">
+    <title>Toucan Amazon Tours - Paquetes en la Amazonia Peruana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: #F7F083;
+            color: #1a472a;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 100px;
+            width: auto;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: #1a472a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: #e60000;
+        }
+
+        /* Hero Section */
+        .hero {
+            /* Overlay muy tenue para que la imagen se vea más clara (alpha reducido) */
+            background: linear-gradient(rgba(26, 71, 42, 0.15), rgba(26, 71, 42, 0.15)), 
+                        url('./img/galeria.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+            color: #1a472a;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* Sección de Paquetes */
+        .paquetes {
+            padding: 5rem 0;
+            background: #f9f9f9;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #1a472a;
+        }
+
+        .paquetes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .paquete-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .paquete-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .paquete-img {
+            width: 100%;
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+        }
+
+        .paquete-content {
+            padding: 2rem;
+        }
+
+        .paquete-content h3 {
+            color: #1a472a;
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .duracion {
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .descripcion {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .precio {
+            font-size: 1.5rem;
+            color: #228B22;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        /* Galería de Imágenes */
+        .galeria {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .galeria-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .galeria-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .galeria-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        /* Sección Sobre Nosotros */
+        .sobre-nosotros {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #f0f8f4 0%, #e8f5f0 100%);
+        }
+
+        .sobre-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .sobre-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .sobre-texto h2 {
+            font-size: 2.5rem;
+            color: #68495b;
+            margin-bottom: 1.5rem;
+        }
+
+        .sobre-texto p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .sobre-lista {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .sobre-lista li {
+            padding: 0.5rem 0;
+            color: #228b8b;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .sobre-content {
+                grid-template-columns: 1fr;
+            }
+
+            .sobre-texto h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* Sección de Características */
+        .caracteristicas {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .caracteristicas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .caracteristica {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .caracteristica-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .caracteristica h3 {
+            color: #1a472a;
+            margin-bottom: 1rem;
+        }
+
+        /* Sección de Testimonios */
+        .testimonios {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #1a472a 0%, #2d7a3e 100%);
+            color: white;
+        }
+
+        .testimonios .section-title {
+            color: #ffd700;  /* Color dorado para que destaque */
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);  /* Sombra sutil para mejor legibilidad */
+        }
+
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .testimonio {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #ffd700;
+        }
+
+        .testimonio p {
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .autor {
+            font-weight: bold;
+            color: #ffd700;
+        }
+
+        /* Formulario de Contacto */
+        .contacto {
+            padding: 5rem 0;
+            background: #f9f9f9;
+        }
+
+        .contacto-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        input, textarea, select {
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: #228B22;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f2d1a;
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            color: #ffd700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #333;
+            padding-top: 2rem;
+            text-align: center;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Colores específicos para cada red social */
+        .social-icons a:nth-child(1) {
+            background: #1877f2;  /* Facebook azul */
+        }
+        .social-icons a:nth-child(1):hover {
+            background: #0d65d9;
+        }
+
+        .social-icons a:nth-child(2) {
+            background: #
+        }
+        .social-icons a:nth-child(2):hover {
+            background: #333333;
+        }
+
+        .social-icons a:nth-child(3) {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);  /* Instagram gradiente */
+        }
+        .social-icons a:nth-child(3):hover {
+            background: linear-gradient(45deg, #833AB4, #C13584, #E1306C, #FD1D1D, #405DE6, #5851DB);
+        }
+
+        .social-icons a:nth-child(4) {
+            background: #25D366;  /* WhatsApp verde */
+        }
+        .social-icons a:nth-child(4):hover {
+            background: #128C7E;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                display: none;
+                background: #F7F083;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .paquetes-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .galeria-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-text h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Sección About */
+        .about-section {
+            padding: 5rem 0;
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: #1a472a;
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            nav ul {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #1a472a;
+                flex-direction: column;
+                padding: 1rem;
+                display: none;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header y Navegación -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                   <img src="./img/logo.png" alt="Toucan Amazon Tours Logo" style="height: 120px; width: auto;">
+                    <div>Toucan Amazon Tours</div>
+                </div>
+                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#objetivo">Objetivo</a></li>
+                    <li><a href="#galeria">Galería</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Toucan Amazon Tours</h1>
+            <p>Descubre la magia de la Amazonia Peruana 2025</p>
+            <a href="#paquetes" class="btn">Explorar Paquetes</a>
+        </div>
+    </section>
+
+
+        <!-- NUEVA SECCIÓN PERSONALIZADA -->
+        <section class="objetivo" id="objetivo">
+            <style>
+                .section-title-red {
+                    background: #F7F083;
+                    color: #1a472a;
+                    font-size: 2.5rem;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 1rem 0;
+                    border-radius: 10px;
+                    margin-bottom: 2rem;
+                    letter-spacing: 1px;
+                    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+                }
+                .tarjeta-objetivo {
+                    background: #fff;
+                    border-radius: 18px;
+                    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+                    display: flex;
+                    align-items: center;
+                    gap: 2rem;
+                    padding: 2.5rem 2rem;
+                    max-width: 800px;
+                    margin: 0 auto 3rem auto;
+                }
+                .tarjeta-objetivo .foto-objetivo {
+                    width: 300px;
+                    height: 200px;
+                    border-radius: 18px;
+                    background: #eee;
+                    overflow: hidden;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+                }
+                .tarjeta-objetivo .foto-objetivo img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .tarjeta-objetivo .texto-objetivo {
+                    font-size: 1.2rem;
+                    color: #444;
+                }
+                .tarjeta-qsomos {
+                    background: #fff;
+                    border-radius: 18px;
+                    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: stretch;
+                    gap: 2rem;
+                    padding: 2.5rem 2rem;
+                    max-width: 1200px;
+                    margin: 0 auto 3rem auto;
+                }
+                .tarjeta-qsomos .foto-qsomos {
+                    flex: 1 1 320px;
+                    min-width: 280px;
+                    max-width: 400px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                .tarjeta-qsomos .foto-qsomos img {
+                    width: 100%;
+                    border-radius: 18px;
+                    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+                }
+                .tarjeta-qsomos .texto-qsomos {
+                    flex: 2 1 400px;
+                    font-size: 1.1rem;
+                    color: #444;
+                }
+                .mision-vision-grid {
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 2rem;
+                    max-width: 1200px;
+                    margin: 0 auto 3rem auto;
+                }
+                .tarjeta-mv {
+                    background: #fff;
+                    border-radius: 18px;
+                    box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+                    padding: 2rem 2rem 1.5rem 2rem;
+                    font-size: 1.1rem;
+                    color: #444;
+                }
+                .section-title-mv {
+                    background: #F7F083;
+                    color: #1a472a;
+                    font-size: 2rem;
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 0.7rem 0;
+                    border-radius: 10px;
+                    margin-bottom: 1.2rem;
+                    letter-spacing: 1px;
+                }
+                .equipo-grid {
+                    display: flex;
+                    justify-content: center;
+                    gap: 2rem;
+                    margin-top: 2rem;
+                    max-width: 1200px;
+                    margin: 2rem auto;
+                    flex-wrap: nowrap;
+                    padding: 0 1rem;
+                }
+                .equipo-row-1, .equipo-row-2 {
+                    display: contents;
+                }
+                .tarjeta-equipo {
+                    display: inline-block;
+                    text-align: center;
+                    width: 180px;
+                }
+                .tarjeta-equipo .foto-equipo {
+                    width: 180px;
+                    height: 220px;
+                    background: #fff;
+                    margin-bottom: 1rem;
+                    border-radius: 0;
+                    overflow: hidden;
+                }
+                .tarjeta-equipo .foto-equipo img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                .tarjeta-equipo strong {
+                    color: #054214;
+                    font-size: 1rem;
+                    margin-top: 0.5rem;
+                    font-weight: 500;
+                }
+                @media (max-width: 1200px) {
+                    .equipo-grid {
+                        gap: 1.5rem;
+                    }
+                    .tarjeta-equipo {
+                        width: 160px;
+                    }
+                    .tarjeta-equipo .foto-equipo {
+                        width: 160px;
+                        height: 200px;
+                    }
+                }
+                @media (max-width: 900px) {
+                    .equipo-grid {
+                        flex-wrap: wrap;
+                        justify-content: center;
+                    }
+                    .tarjeta-equipo {
+                        margin: 0.5rem;
+                    }
+                }
+                @media (max-width: 900px) {
+                    .mision-vision-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+            <div class="container">
+                <div class="section-title-red">NUESTRO OBJETIVO</div>
+                <div class="tarjeta-objetivo">
+                    <div class="texto-objetivo">
+                        "Nuestro objetivo es ser tu socio de confianza, ofreciendo soluciones eficientes y personalizadas que optimicen costos y maximicen la satisfacción de nuestros clientes."
+                    </div>
+                    <div class="foto-objetivo">
+                        <img src="./img/objetivo.jpg" alt="Nuestro Objetivo">
+                    </div>
+                </div>
+
+                <div class="section-title-red">¿QUIENES SOMOS?</div>
+                <div class="tarjeta-qsomos">
+                    <div class="foto-qsomos">
+                        <img src="./img/somos.jpg" alt="Quiénes Somos - Peru Routes">
+                    </div>
+                    <div class="texto-qsomos">
+                        <p>Bienvenidos!<br>
+                        Me complace presentarte este conglomerado de información, en nuestra renovada web, que te servirá para conocer mejor la empresa, las personas que trabajan dentro de ella, las actividades que se realizan, y toda la paquetería que tenemos a nivel mundial para ti y tus clientes, la misma que está trabajada de manera minuciosa y que será actualizada mensualmente.<br>
+                        En nuestra web podrás encontrar paquetes en sitios sumamente conocidos, así como lugares remotos dentro del planeta, también contarás con los contactos necesarios para solicitar dicha información, además del asesoramiento para que dichos paquetes sean vendidos rápidamente, gracias a nuestro equipo altamente calificado.<br>
+                        Estamos dichosos de poder brindarte esta excelente herramienta y, podamos lograr juntos muchas más ventas.</p>
+                        <p style="font-weight:bold;">PERU ROUTES<br><span style="color:#228B22;">Tu Mayorista Aliado!</span></p>
+                    </div>
+                </div>
+
+                <div class="mision-vision-grid">
+                    <div>
+                        <div class="section-title-mv">MISIÓN</div>
+                        <div class="tarjeta-mv">
+                            Brindar experiencias de viajes únicas y seguras que conecten con la cultura, naturaleza y tradiciones del Perú, ofreciendo un servicio personalizado que supere las expectativas.
+                        </div>
+                    </div>
+                    <div>
+                        <div class="section-title-mv">VISIÓN</div>
+                        <div class="tarjeta-mv">
+                            En 5 años ser una agencia de viajes líder en el sector turístico reconocida por su compromiso con la calidad, innovación y el turismo responsable, contribuyendo al desarrollo sostenible de las comunidades locales.
+                        </div>
+                    </div>
+                </div>
+
+                <div style="margin-top: 3rem;">
+                    <div class="section-title-mv">VALORES</div>
+                    <div class="valores-grid">
+                        <style>
+                            .valores-grid {
+                                display: grid;
+                                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                                gap: 2rem;
+                                max-width: 1200px;
+                                margin: 0 auto;
+                            }
+                            .valor-card {
+                                background: #fff;
+                                padding: 2rem;
+                                border-radius: 18px;
+                                text-align: center;
+                                box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+                            }
+                            .valor-card i {
+                                font-size: 2.5rem;
+                                color: #1a472a;
+                                margin-bottom: 1rem;
+                            }
+                            .valor-card strong {
+                                display: block;
+                                font-size: 1.2rem;
+                                margin-bottom: 0.5rem;
+                                color: #1a472a;
+                            }
+                        </style>
+                        <div class="valor-card">
+                            <i class="fas fa-hands"></i>
+                            <strong>Respeto</strong>
+                        </div>
+                        <div class="valor-card">
+                            <i class="fas fa-handshake"></i>
+                            <strong>Compromiso</strong>
+                        </div>
+                        <div class="valor-card">
+                            <i class="fas fa-clipboard-check"></i>
+                            <strong>Responsabilidad</strong>
+                        </div>
+                        <div class="valor-card">
+                            <i class="fas fa-heart"></i>
+                            <strong>Honestidad</strong>
+                        </div>
+                        <div class="valor-card">
+                            <i class="fas fa-users"></i>
+                            <strong>Trabajo en Equipo</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-title-red" style="margin-top: 3rem;">NUESTRO EQUIPO</div>
+                <p style="text-align:center;max-width:900px;margin:0 auto 2rem auto;">En Peru Routes Mayorista somos líderes en ofrecer soluciones a las agencias de viaje con un equipo humano comprometido a acompañarlas en todo momento.<br>
+                Te presentamos a nuestro personal el cual te acompañará en todo momento a brindarte el mejor servicio.</p>
+                <div class="equipo-grid">
+                    <!-- Ejemplo de tarjeta de equipo con espacio para foto -->
+                    <div class="tarjeta-equipo">
+                        <div class="foto-equipo">
+                            <img src="./img/karel.jpg" alt="Karel Salin Ríos Rosa">
+                        </div>
+                        <strong>Karel Salin Ríos Rosa – Pérez</strong><br>Agente de Viajes<br>
+                        <a href="mailto:k.rios@toucan.com"><i class="fas fa-envelope"></i> k.rios@toucan.com</a><br>
+                        <a href="tel:+51963406903"><i class="fas fa-phone"></i> +51 963 406 903</a>
+                    </div>
+                    <div class="tarjeta-equipo">
+                        <div class="foto-equipo">
+                            <img src="./img/yoba.jpg" alt="Yobana Huamani">
+                        </div>
+                        <strong>Yobana Huamani Quispe</strong><br>Representante Legal<br>
+                        <a href="mailto:y.huamani@toucan.com"><i class="fas fa-envelope"></i> y.huamani@toucan.com</a><br>
+                        <a href="tel:+51970585681"><i class="fas fa-phone"></i> +51 970 585 681</a>
+                    </div>
+                    <div class="tarjeta-equipo">
+                        <div class="foto-equipo">
+                            <img src="./img/vale.jpg" alt="Valeria Alejandra">
+                        </div>
+                        <strong>Valeria Alejandra Pinedo Coello</strong><br>Área Contable<br>
+                        <a href="mailto:v.pinedo@toucan.com"><i class="fas fa-envelope"></i> v.pinedo@toucan.com</a><br>
+                        <a href="tel:+51970585982"><i class="fas fa-phone"></i> +51 970 585 982</a>
+                    </div>
+                    <div class="tarjeta-equipo">
+                        <div class="foto-equipo">
+                            <img src="./img/yasira.jpg" alt="Yassira Cafur">
+                        </div>
+                        <strong>Yassira Cafur Huachaca Pacco</strong><br>Administradora de RR. HH.<br>
+                        <a href="mailto:y.huachaca@toucan.com"><i class="fas fa-envelope"></i> y.huachaca@toucan.com</a><br>
+                        <a href="tel:+51913893517"><i class="fas fa-phone"></i> +51 913 893 517</a>
+                    </div>
+                    <div class="tarjeta-equipo">
+                        <div class="foto-equipo">
+                            <img src="./img/yulan.jpg" alt="Milagros Yu-lan">
+                        </div>
+                        <strong>Milagros Yu-lan Navarro Vilca</strong><br>Gerente de Marketing<br>
+                        <a href="mailto:m.navarro@toucan.com"><i class="fas fa-envelope"></i> m.navarro@toucan.com</a><br>
+                        <a href="tel:+51974668617"><i class="fas fa-phone"></i> +51 974 668 617</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Galería de Imágenes -->
+    <section class="galeria" id="galeria">
+        <div class="container">
+            <h2 class="section-title">Galería de la Amazonia</h2>
+            <div class="galeria-grid">
+                <img src="./img/cabibara.jpg" alt="Cabibara en la Amazonia" class="galeria-img">
+                <img src="./img/foto01.jpg" alt="Foto 1" class="galeria-img">
+                <img src="./img/foto02.jpg" alt="Foto 2" class="galeria-img">
+                <img src="./img/foto03.jpg" alt="Foto 3" class="galeria-img">
+                <img src="./img/foto04.jpg" alt="Foto 4" class="galeria-img">
+                <img src="./img/foto05.jpg" alt="Foto 5" class="galeria-img">
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Sección Sobre Nosotros -->
+    <section class="sobre-nosotros">
+        <div class="container">
+            <div class="sobre-content">
+                <div class="sobre-img">
+                    <img src="./img/tours.jpg" alt="Equipo Toucan Amazon Tours">
+                </div>
+                <div class="sobre-texto">
+                    <h2>Sobre Toucan Amazon Tours</h2>
+                    <p>Con más de 10 años de experiencia en turismo de aventura, Toucan Amazon Tours se ha convertido en tu socio confiable para explorar uno de los ecosistemas más fascinantes del planeta.</p>
+                    <p>Nuestro equipo está compuesto por guías locales expertos, profesionales de turismo certificados y amantes de la naturaleza que comparten tu pasión por la Amazonia.</p>
+                    <p>Nos comprometemos con el turismo responsable y sostenible, trabajando directamente con comunidades locales para asegurar que tu aventura beneficie al ecosistema y a las personas que viven en él.</p>
+                    <ul class="sobre-lista">
+                        <li>✓ 10+ años de experiencia</li>
+                        <li>✓ +500 clientes satisfechos</li>
+                        <li>✓ Certificación de turismo sostenible</li>
+                        <li>✓ Guías bilingües disponibles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="testimonios">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <div class="testimonios-grid">
+                <div class="testimonio">
+                    <p>"Una experiencia inolvidable. Los guías fueron increíbles y la naturaleza nos dejó sin palabras. Definitivamente volveremos."</p>
+                    <div class="autor">- María García, España</div>
+                </div>
+                <div class="testimonio">
+                    <p>"El mejor viaje de mi vida. La selva es más hermosa de lo que imaginaba. Recomiendo Toucan Amazon Tours 100%."</p>
+                    <div class="autor">- Carlos Rodríguez, Argentina</div>
+                </div>
+                <div class="testimonio">
+                    <p>"Increíble servicio, excelente comida y alojamiento cómodo. Fue exactamente lo que necesitaba para desconectarme."</p>
+                    <div class="autor">- Ana López, Colombia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de Contacto -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <h2 class="section-title">Planifica Tu Aventura</h2>
+            <div class="contacto-wrapper">
+                <form>
+                    <div class="form-row">
+                        <input type="text" placeholder="Tu Nombre" required>
+                        <input type="email" placeholder="Tu Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="Teléfono" required>
+                        <input type="number" placeholder="Número de Personas" min="1" required>
+                    </div>
+                    <select required>
+                        <option value="">Selecciona un Paquete</option>
+                        <option value="aventura">Aventura Clásica (3 días)</option>
+                        <option value="premium">Experiencia Premium (5 días)</option>
+                        <option value="expedicion">Expedición Extrema (7 días)</option>
+                    </select>
+                    <textarea placeholder="Cuéntanos sobre tu viaje ideal..." required></textarea>
+                    <button type="submit" class="btn">Enviar Consulta</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Sobre Nosotros</h4>
+                    <p>Toucan Amazon Tours es tu mejor opción para explorar la Amazonia Peruana. Más de 10 años de experiencia en turismo responsable.</p>
+                    <div class="social-icons">
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://wa.me/51999888777" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#objetivo">Objetivo</a></li>
+                        <li><a href="#galeria">Galería</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p>📍 Puerto Maldonado, Perú</p>
+                    <p>📞 +51 999 888 777</p>
+                    <p>✉️ info@toucanamozontours.com</p>
+                    <p>🕐 Lun - Dom: 08:00 - 20:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Toucan Amazon Tours. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('active');
+        }
+
+        // Cerrar menú al hacer clic en un enlace
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('nav').classList.remove('active');
+            });
+        });
+
+        // Manejar envío del formulario
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('¡Gracias por tu consulta! Nos pondremos en contacto pronto.');
+            this.reset();
+        });
+
+        // Efecto smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es-PE">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Toucan Amazon Tours - Paquetes turísticos en la Amazonia Peruana. Vive una experiencia única en la selva.">
+    <meta name="keywords" content="turismo, amazonia, peru, paquetes, tours, aventura">
+    <title>Toucan Amazon Tours - Paquetes en la Amazonia Peruana</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .tarjeta-objetivo {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+            padding: 2.5rem 2rem;
+            max-width: 1000px;
+            margin: 0 auto 3rem auto;
+        }
+
+        .tarjeta-objetivo .foto-objetivo {
+            width: 300px;
+            height: 200px;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+        }
+
+        .tarjeta-objetivo .foto-objetivo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tarjeta-objetivo .texto-objetivo {
+            flex: 1;
+            font-size: 1.2rem;
+            color: #444;
+        }
+
+        .equipo-grid {
+            display: grid;
+            grid-template-rows: auto auto;
+            gap: 2rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1rem;
+        }
+
+        .equipo-row-1 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        .equipo-row-2 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .tarjeta-equipo {
+            background: #fff;
+            border-radius: 18px;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.13);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tarjeta-equipo .foto-equipo {
+            width: 150px;
+            height: 200px;
+            border-radius: 75px / 100px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .tarjeta-equipo .foto-equipo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tarjeta-equipo strong {
+            color: #0FDB41;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .equipo-row-1, .equipo-row-2 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .equipo-row-1, .equipo-row-2 {
+                grid-template-columns: 1fr;
+            }
+            .tarjeta-objetivo {
+                flex-direction: column;
+            }
+            .tarjeta-objetivo .foto-objetivo {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+    </style>
+    <!-- ... resto de los estilos ... -->
+</head>
+<body>
+    <!-- ... contenido anterior ... -->
+
+    <div class="objetivo" id="objetivo">
+        <div class="section-title-red">NUESTRO OBJETIVO</div>
+        <div class="tarjeta-objetivo">
+            <div class="texto-objetivo">
+                "Nuestro objetivo es ser tu socio de confianza, ofreciendo soluciones eficientes y personalizadas que optimicen costos y maximicen la satisfacción de nuestros clientes."
+            </div>
+            <div class="foto-objetivo">
+                <img src="./img/objetivo.jpg" alt="Nuestro Objetivo">
+            </div>
+        </div>
+    </div>
+
+    <!-- ... más contenido ... -->
+
+    <div class="section-title-red">NUESTRO EQUIPO</div>
+    <p style="text-align:center;max-width:900px;margin:0 auto 2rem auto;">En Peru Routes Mayorista somos líderes en ofrecer soluciones a las agencias de viaje con un equipo humano comprometido a acompañarlas en todo momento.<br>
+    Te presentamos a nuestro personal el cual te acompañará en todo momento a brindarte el mejor servicio.</p>
+    
+    <div class="equipo-grid">
+        <div class="equipo-row-1">
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/karel.jpg" alt="Karel Salin Ríos Rosa">
+                </div>
+                <strong>Karel Salin Ríos Rosa – Pérez</strong><br>Agente de Viajes<br>
+                <a href="mailto:k.rios@toucanamazontours.com"><i class="fas fa-envelope"></i> k.rios@toucanamazontours.com</a><br>
+                <a href="tel:+51963406903"><i class="fas fa-phone"></i> +51 963 406 903</a>
+            </div>
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/yoba.jpg" alt="Yobana Huamani">
+                </div>
+                <strong>Yobana Huamani Quispe</strong><br>Representante Legal<br>
+                <a href="mailto:y.huamani@toucanamazontours.com"><i class="fas fa-envelope"></i> y.huamani@toucanamazontours.com</a><br>
+                <a href="tel:+51970585681"><i class="fas fa-phone"></i> +51 970 585 681</a>
+            </div>
+        </div>
+        <div class="equipo-row-2">
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/vale.jpg" alt="Valeria Alejandra">
+                </div>
+                <strong>Valeria Alejandra Pinedo Coello</strong><br>Área Contable<br>
+                <a href="mailto:v.pinedo@toucanamazontours.com"><i class="fas fa-envelope"></i> v.pinedo@toucanamazontours.com</a><br>
+                <a href="tel:+51970585982"><i class="fas fa-phone"></i> +51 970 585 982</a>
+            </div>
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/yasira.jpg" alt="Yassira Cafur">
+                </div>
+                <strong>Yassira Cafur Huachaca Pacco</strong><br>Administradora de RR. HH.<br>
+                <a href="mailto:y.huachaca@toucanamazontours.com"><i class="fas fa-envelope"></i> y.huachaca@toucanamazontours.com</a><br>
+                <a href="tel:+51913893517"><i class="fas fa-phone"></i> +51 913 893 517</a>
+            </div>
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/yulan.jpg" alt="Milagros Yu-lan">
+                </div>
+                <strong>Milagros Yu-lan Navarro Vilca</strong><br>Gerente de Marketing<br>
+                <a href="mailto:m.navarro@toucanamazontours.com"><i class="fas fa-envelope"></i> m.navarro@toucanamazontours.com</a><br>
+                <a href="tel:+51974668617"><i class="fas fa-phone"></i> +51 974 668 617</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ... resto del contenido ... -->
+</body>
+</html>

@@ -1,0 +1,127 @@
+    <style>
+        .equipo-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+            margin-top: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 1rem;
+        }
+        .fila-top {
+            display: flex;
+            justify-content: center;
+            gap: 8rem;
+            margin: 0 auto;
+        }
+        .fila-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 8rem;
+            margin: 0 auto;
+        }
+        .tarjeta-equipo {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .foto-equipo {
+            width: 180px;
+            height: 220px;
+            border-radius: 90px / 110px;
+            background: #fff;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+        .foto-equipo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .tarjeta-equipo strong {
+            color: #e60000;
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .tarjeta-equipo .cargo {
+            color: #666;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .tarjeta-equipo a {
+            color: #666;
+            text-decoration: none;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .tarjeta-equipo a:hover {
+            color: #0FDB41;
+        }
+        @media (max-width: 1100px) {
+            .fila-top, .fila-bottom {
+                gap: 4rem;
+            }
+        }
+        @media (max-width: 768px) {
+            .fila-top, .fila-bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: 3rem;
+            }
+        }
+    </style>
+
+    <div class="equipo-grid">
+        <div class="fila-top">
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/karel.jpg" alt="Karel Salin Ríos Rosa">
+                </div>
+                <strong>Karel Salin Ríos Rosa – Pérez</strong>
+                <span class="cargo">Agente de Viajes</span>
+                <a href="mailto:k.rios@toucanamazontours.com">k.rios@toucanamazontours.com</a>
+                <a href="tel:+51963406903">+51 963 406 903</a>
+            </div>
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/yoba.jpg" alt="Yobana Huamani">
+                </div>
+                <strong>Yobana Huamani Quispe</strong>
+                <span class="cargo">Representante Legal</span>
+                <a href="mailto:y.huamani@toucanamazontours.com">y.huamani@toucanamazontours.com</a>
+                <a href="tel:+51970585681">+51 970 585 681</a>
+            </div>
+        </div>
+        <div class="fila-bottom">
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/vale.jpg" alt="Valeria Alejandra">
+                </div>
+                <strong>Valeria Alejandra Pinedo Coello</strong>
+                <span class="cargo">Área Contable</span>
+                <a href="mailto:v.pinedo@toucanamazontours.com">v.pinedo@toucanamazontours.com</a>
+                <a href="tel:+51970585982">+51 970 585 982</a>
+            </div>
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/yasira.jpg" alt="Yassira Cafur">
+                </div>
+                <strong>Yassira Cafur Huachaca Pacco</strong>
+                <span class="cargo">Administradora de RR. HH.</span>
+                <a href="mailto:y.huachaca@toucanamazontours.com">y.huachaca@toucanamazontours.com</a>
+                <a href="tel:+51913893517">+51 913 893 517</a>
+            </div>
+            <div class="tarjeta-equipo">
+                <div class="foto-equipo">
+                    <img src="./img/yulan.jpg" alt="Milagros Yu-lan">
+                </div>
+                <strong>Milagros Yu-lan Navarro Vilca</strong>
+                <span class="cargo">Gerente de Marketing</span>
+                <a href="mailto:m.navarro@toucanamazontours.com">m.navarro@toucanamazontours.com</a>
+                <a href="tel:+51974668617">+51 974 668 617</a>
+            </div>
+        </div>
+    </div>
