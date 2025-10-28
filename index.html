@@ -73,6 +73,83 @@
             color: #e60000;
         }
 
+        /* Menú desplegable */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #F7F083;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1000;
+            border-radius: 8px;
+            top: 100%;
+            left: 0;
+            padding: 10px 0;
+        }
+
+        .dropdown-content a {
+            color: #1a472a !important;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: rgba(26, 71, 42, 0.1);
+            color: #e60000 !important;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown > a::after {
+            content: " ▼";
+            font-size: 0.8rem;
+            margin-left: 5px;
+        }
+
+        /* Submenú de segundo nivel */
+        .submenu {
+            position: relative;
+        }
+
+        .submenu-content {
+            display: none;
+            position: absolute;
+            background-color: #F7F083;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1001;
+            border-radius: 8px;
+            left: 100%;
+            top: 0;
+            padding: 10px 0;
+        }
+
+        .submenu:hover .submenu-content {
+            display: block;
+        }
+
+        .submenu-content a {
+            color: #1a472a !important;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .submenu-content a:hover {
+            background-color: rgba(26, 71, 42, 0.1);
+            color: #e60000 !important;
+        }
+
         /* Hero Section */
         .hero {
             /* Overlay muy tenue para que la imagen se vea más clara (alpha reducido) */
@@ -454,7 +531,7 @@
         }
 
         .social-icons a:nth-child(2) {
-            background: #
+            background: #1DA1F2;  /* Twitter azul */
         }
         .social-icons a:nth-child(2):hover {
             background: #333333;
@@ -579,6 +656,37 @@
             nav.active ul {
                 display: flex;
             }
+
+            .dropdown-content {
+                position: static;
+                display: none;
+                background-color: rgba(247, 240, 131, 0.9);
+                box-shadow: none;
+                border-radius: 0;
+                margin-left: 20px;
+            }
+
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+
+            .dropdown > a {
+                cursor: pointer;
+            }
+
+            .submenu-content {
+                position: static;
+                display: none;
+                background-color: rgba(247, 240, 131, 0.8);
+                box-shadow: none;
+                border-radius: 0;
+                margin-left: 20px;
+                padding: 5px 0;
+            }
+
+            .submenu.active .submenu-content {
+                display: block;
+            }
         }
     </style>
 </head>
@@ -594,6 +702,64 @@
                 <button class="menu-toggle" onclick="toggleMenu()">☰</button>
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#nacional">Nacional</a>
+                        <div class="dropdown-content">
+                            <a href="#amazonas">Amazonas</a>
+                            <a href="#ancash">Ancash</a>
+                            <a href="#apurimac">Apurímac</a>
+                            <a href="#arequipa">Arequipa</a>
+                            <a href="#ayacucho">Ayacucho</a>
+                            <a href="#cajamarca">Cajamarca</a>
+                            <a href="#chachapoyas">Chachapoyas</a>
+                            <a href="#chiclayo">Chiclayo</a>
+                            <a href="#cusco">Cusco</a>
+                            <a href="#huaraz">Huaraz</a>
+                            <a href="#iquitos">Iquitos</a>
+                            <a href="#playas">Playas del Norte</a>
+                            <a href="#puno">Puno</a>
+                            <a href="#tarapoto">Tarapoto</a>
+                            <a href="#trujillo">Trujillo</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#internacional">Internacional</a>
+                        <div class="dropdown-content">
+                            <div class="submenu">
+                                <a href="#sudamerica">SUDAMERICA ▶</a>
+                                <div class="submenu-content">
+                                    <a href="#argentina">Argentina</a>
+                                    <a href="#brasil">Brasil</a>
+                                    <a href="#bolivia">Bolivia</a>
+                                    <a href="#chile">Chile</a>
+                                    <a href="#colombia">Colombia</a>
+                                    <a href="#ecuador">Ecuador</a>
+                                </div>
+                            </div>
+                            <div class="submenu">
+                                <a href="#centroamerica">CENTRO AMERICA Y CARIBE ▶</a>
+                                <div class="submenu-content">
+                                    <a href="#aruba">Aruba</a>
+                                    <a href="#costarica">Costa Rica</a>
+                                    <a href="#cuba">Cuba</a>
+                                    <a href="#jamaica">Jamaica</a>
+                                    <a href="#mexico">Mexico</a>
+                                    <a href="#panama">Panamá</a>
+                                    <a href="#puntacana">Punta Cana</a>
+                                </div>
+                            </div>
+                            <div class="submenu">
+                                <a href="#norteamerica">NORTE AMERICA ▶</a>
+                                <div class="submenu-content">
+                                    <a href="#usa">USA</a>
+                                    <a href="#canada">Canada</a>
+                                    <a href="#elsalvador">El Salvador</a>
+                                    <a href="#haiti">Haiti</a>
+                                </div>
+                            </div>
+                            <a href="#eventos">EVENTOS</a>
+                        </div>
+                    </li>
                     <li><a href="#objetivo">Objetivo</a></li>
                     <li><a href="#galeria">Galería</a></li>
                     <li><a href="#contacto">Contacto</a></li>
@@ -639,8 +805,8 @@
                     margin: 0 auto 3rem auto;
                 }
                 .tarjeta-objetivo .foto-objetivo {
-                    width: 300px;
-                    height: 200px;
+                    width: 500px;
+                    height: 180px;
                     border-radius: 18px;
                     background: #eee;
                     overflow: hidden;
@@ -1048,10 +1214,60 @@
             nav.classList.toggle('active');
         }
 
+        // Manejar dropdown en móviles
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown > a');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const parentDropdown = this.parentElement;
+                        
+                        // Cerrar otros dropdowns
+                        document.querySelectorAll('.dropdown').forEach(d => {
+                            if (d !== parentDropdown) {
+                                d.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle el dropdown actual
+                        parentDropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Manejar submenús en móviles
+            const submenus = document.querySelectorAll('.submenu > a');
+            
+            submenus.forEach(submenu => {
+                submenu.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 768) {
+                        e.preventDefault();
+                        const parentSubmenu = this.parentElement;
+                        
+                        // Cerrar otros submenús
+                        document.querySelectorAll('.submenu').forEach(s => {
+                            if (s !== parentSubmenu) {
+                                s.classList.remove('active');
+                            }
+                        });
+                        
+                        // Toggle el submenú actual
+                        parentSubmenu.classList.toggle('active');
+                    }
+                });
+            });
+        });
+
         // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('nav a').forEach(link => {
+        document.querySelectorAll('nav a:not(.dropdown > a)').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelector('nav').classList.remove('active');
+                // Cerrar todos los dropdowns
+                document.querySelectorAll('.dropdown').forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
             });
         });
 
