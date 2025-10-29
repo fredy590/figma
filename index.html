@@ -81,15 +81,43 @@
 
         .dropdown-content {
             display: none;
-            position: absolute;
+            position: fixed;
             background-color: #F7F083;
-            min-width: 200px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            min-width: 220px;
+            max-height: 70vh;
+            overflow-y: auto;
+            box-shadow: 0px 8px 20px 0px rgba(0,0,0,0.3);
             z-index: 1000;
             border-radius: 8px;
-            top: 100%;
-            left: 0;
             padding: 10px 0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Posicionamiento dinámico del dropdown */
+        .dropdown {
+            position: static;
+        }
+
+        /* Estilos para el scroll del dropdown */
+        .dropdown-content::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-track {
+            background: rgba(26, 71, 42, 0.1);
+            border-radius: 3px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb {
+            background: #1a472a;
+            border-radius: 3px;
+        }
+
+        .dropdown-content::-webkit-scrollbar-thumb:hover {
+            background: #e60000;
         }
 
         .dropdown-content a {
@@ -103,10 +131,6 @@
         .dropdown-content a:hover {
             background-color: rgba(26, 71, 42, 0.1);
             color: #e60000 !important;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
 
         .dropdown > a::after {
@@ -464,9 +488,23 @@
 
         .footer-content {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             gap: 2rem;
             margin-bottom: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
         }
 
         .footer-section h4 {
@@ -490,6 +528,166 @@
 
         .footer-section a:hover {
             color: #ffd700;
+        }
+
+        /* Estilos para oficinas en footer */
+        .oficina-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .oficina-titulo {
+            background: #F7F083;
+            color: #1a472a;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 6px;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .oficina-item p {
+            color: #ddd;
+            margin-bottom: 0.4rem;
+            padding-left: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .oficina-item i {
+            color: #ffd700;
+            margin-right: 8px;
+            width: 12px;
+        }
+
+        /* Estilos para información legal y mapa */
+        .legal-links {
+            margin-bottom: 1.5rem;
+        }
+
+        .legal-link {
+            display: flex;
+            align-items: center;
+            padding: 10px 12px;
+            margin-bottom: 8px;
+            background: rgba(247, 240, 131, 0.1);
+            border-radius: 6px;
+            border-left: 3px solid #F7F083;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .legal-link:hover {
+            background: rgba(247, 240, 131, 0.2);
+            border-left-color: #ffd700;
+            transform: translateX(5px);
+        }
+
+        .legal-link i {
+            color: #ffd700;
+            margin-right: 10px;
+            font-size: 1.1rem;
+            width: 16px;
+        }
+
+        .legal-link span {
+            color: #ddd;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .legal-link:hover span {
+            color: #ffd700;
+        }
+
+        .mapa-container {
+            margin-top: 1rem;
+        }
+
+        .mapa-container h5 {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mapa-embed {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .mapa-embed:hover {
+            transform: scale(1.02);
+        }
+
+        /* Estilos para footer reorganizado */
+        .footer-section-extra {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .footer-section-extra h5 {
+            color: #ffd700;
+            margin-bottom: 0.8rem;
+            font-size: 1rem;
+        }
+
+        .enlaces-rapidos {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+
+        .enlaces-rapidos a {
+            color: #ddd;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .enlaces-rapidos a:hover {
+            color: #ffd700;
+            padding-left: 5px;
+        }
+
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .contacto-info p {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+
+        .contacto-info i {
+            color: #ffd700;
+            width: 16px;
+            font-size: 1rem;
+        }
+
+        /* Ajustar tamaño del mapa */
+        .mapa-embed iframe {
+            height: 160px;
+        }
+
+        /* Responsive para nueva sección */
+        @media (max-width: 768px) {
+            .mapa-embed iframe {
+                height: 140px;
+            }
+            
+            .footer-section-extra {
+                margin-top: 1rem;
+                padding-top: 0.8rem;
+            }
         }
 
         .footer-bottom {
@@ -601,9 +799,11 @@
             display: none;
             background: none;
             border: none;
-            color: white;
-            font-size: 1.5rem;
+            color: #1a472a;
+            font-size: 1.8rem;
             cursor: pointer;
+            padding: 10px;
+            z-index: 1001;
         }
 
         /* Sección About */
@@ -643,18 +843,35 @@
             }
 
             nav ul {
-                position: absolute;
-                top: 100%;
+                position: fixed;
+                top: 120px;
                 left: 0;
                 right: 0;
-                background: #1a472a;
+                background: #F7F083;
                 flex-direction: column;
                 padding: 1rem;
                 display: none;
+                z-index: 999;
+                max-height: calc(100vh - 120px);
+                overflow-y: auto;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             }
 
             nav.active ul {
                 display: flex;
+            }
+
+            nav ul li {
+                width: 100%;
+                border-bottom: 1px solid rgba(26, 71, 42, 0.2);
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 15px 10px;
+                color: #1a472a !important;
+                font-size: 1.1rem;
+                width: 100%;
             }
 
             .dropdown-content {
@@ -664,6 +881,8 @@
                 box-shadow: none;
                 border-radius: 0;
                 margin-left: 20px;
+                max-height: none;
+                overflow-y: visible;
             }
 
             .dropdown.active .dropdown-content {
@@ -680,12 +899,17 @@
                 background-color: rgba(247, 240, 131, 0.8);
                 box-shadow: none;
                 border-radius: 0;
-                margin-left: 20px;
+                margin-left: 40px;
                 padding: 5px 0;
             }
 
             .submenu.active .submenu-content {
                 display: block;
+            }
+
+            .dropdown-content a, .submenu-content a {
+                padding: 10px 15px !important;
+                font-size: 1rem !important;
             }
         }
     </style>
@@ -772,8 +996,7 @@
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>Toucan Amazon Tours</h1>
-            <p>Descubre la magia de la Amazonia Peruana 2025</p>
-            <a href="#paquetes" class="btn">Explorar Paquetes</a>
+            <p>🌿 Somos una agencia de viajes en Madre de Dios que te conecta con la naturaleza y la aventura amazónica. ✨</p>
         </div>
     </section>
 
@@ -1184,22 +1407,68 @@
                         <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
                         <a href="https://wa.me/51999888777" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     </div>
+                    <div class="footer-section-extra">
+                        <h5>Enlaces Rápidos</h5>
+                        <div class="enlaces-rapidos">
+                            <a href="#inicio">• Inicio</a>
+                            <a href="#objetivo">• Objetivo</a>
+                            <a href="#galeria">• Galería</a>
+                            <a href="#contacto">• Contacto</a>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Enlaces Rápidos</h4>
-                    <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#objetivo">Objetivo</a></li>
-                        <li><a href="#galeria">Galería</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
-                    </ul>
+                    <h4>Contacto Principal</h4>
+                    <div class="contacto-info">
+                        <p><i class="fas fa-map-marker-alt"></i> Puerto Maldonado, Madre de Dios - Perú</p>
+                        <p><i class="fas fa-phone"></i> +51 924 358 415</p>
+                        <p><i class="fas fa-envelope"></i> reservas@toucanamozontours.com</p>
+                        <p><i class="fas fa-clock"></i> Lun - Dom: 08:00 - 20:00</p>
+                    </div>
                 </div>
+                
                 <div class="footer-section">
-                    <h4>Contacto</h4>
-                    <p>📍 Puerto Maldonado, Perú</p>
-                    <p>📞 +51 924 358 415</p>
-                    <p>✉️ info@toucanamozontours.com</p>
-                    <p>🕐 Lun - Dom: 08:00 - 20:00</p>
+                    <h4>Nuestras Oficinas</h4>
+                    <div class="oficina-item">
+                        <div class="oficina-titulo">Oficina Madre de Dios</div>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Pardo 610 - T2 - Puerto Maldonado</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Jose Larco 1021 - Puerto Maldonado</p>
+                    </div>
+                    <div class="oficina-item">
+                        <div class="oficina-titulo">Oficina Cusco</div>
+                        <p><i class="fas fa-map-marker-alt"></i> Qorikancha Tienda B-1021</p>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Información Legal & Ubicación</h4>
+                    <div class="legal-links">
+                        <a href="#terminos" class="legal-link">
+                            <i class="fas fa-file-contract"></i>
+                            <span>Términos y Condiciones</span>
+                        </a>
+                        <a href="#reclamaciones" class="legal-link">
+                            <i class="fas fa-book"></i>
+                            <span>Libro de Reclamaciones</span>
+                        </a>
+                    </div>
+                    <div class="mapa-container">
+                        <h5 style="color: #ffd700; margin-bottom: 10px;">
+                            <i class="fas fa-map"></i> Encuéntranos
+                        </h5>
+                        <div class="mapa-embed">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15665.546234715123!2d-69.19055839658203!3d-12.593730500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x916dd6735dee91e5%3A0x8db9dc4bb825d524!2sPuerto%20Maldonado!5e0!3m2!1ses!2spe!4v1698774123456!5m2!1ses!2spe"
+                                width="100%" 
+                                height="160" 
+                                style="border:0; border-radius: 8px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1211,8 +1480,50 @@
     <script>
         function toggleMenu() {
             const nav = document.querySelector('nav');
-            nav.classList.toggle('active');
+            const isActive = nav.classList.contains('active');
+            
+            if (isActive) {
+                nav.classList.remove('active');
+                // Cerrar todos los dropdowns y submenús
+                document.querySelectorAll('.dropdown, .submenu').forEach(item => {
+                    item.classList.remove('active');
+                });
+            } else {
+                nav.classList.add('active');
+            }
         }
+
+        // Posicionar dropdowns dinámicamente
+        function positionDropdown(dropdown, content) {
+            const rect = dropdown.getBoundingClientRect();
+            const contentHeight = content.offsetHeight;
+            const viewportHeight = window.innerHeight;
+            
+            // Posición horizontal
+            content.style.left = rect.left + 'px';
+            
+            // Posición vertical - ajustar si se sale de la pantalla
+            if (rect.bottom + contentHeight > viewportHeight) {
+                content.style.top = (rect.top - contentHeight) + 'px';
+            } else {
+                content.style.top = rect.bottom + 'px';
+            }
+        }
+
+        // Manejar dropdown hover en desktop
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown');
+            
+            dropdowns.forEach(dropdown => {
+                const content = dropdown.querySelector('.dropdown-content');
+                
+                dropdown.addEventListener('mouseenter', function() {
+                    if (window.innerWidth > 768) {
+                        positionDropdown(this, content);
+                    }
+                });
+            });
+        });
 
         // Manejar dropdown en móviles
         document.addEventListener('DOMContentLoaded', function() {
@@ -1260,15 +1571,30 @@
             });
         });
 
-        // Cerrar menú al hacer clic en un enlace
-        document.querySelectorAll('nav a:not(.dropdown > a)').forEach(link => {
+        // Cerrar menú al hacer clic en un enlace (excepto dropdowns y submenús)
+        document.querySelectorAll('nav a:not(.dropdown > a):not(.submenu > a)').forEach(link => {
             link.addEventListener('click', () => {
                 document.querySelector('nav').classList.remove('active');
-                // Cerrar todos los dropdowns
-                document.querySelectorAll('.dropdown').forEach(dropdown => {
-                    dropdown.classList.remove('active');
+                // Cerrar todos los dropdowns y submenús
+                document.querySelectorAll('.dropdown, .submenu').forEach(item => {
+                    item.classList.remove('active');
                 });
             });
+        });
+
+        // Cerrar menú al hacer clic fuera de él en móviles
+        document.addEventListener('click', function(event) {
+            const nav = document.querySelector('nav');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (window.innerWidth <= 768 && nav.classList.contains('active')) {
+                if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+                    nav.classList.remove('active');
+                    document.querySelectorAll('.dropdown, .submenu').forEach(item => {
+                        item.classList.remove('active');
+                    });
+                }
+            }
         });
 
         // Manejar envío del formulario
